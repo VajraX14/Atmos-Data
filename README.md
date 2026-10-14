@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# Atmos-Data — Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based weather application that retrieves current weather data for a city using the OpenWeatherMap API. The project demonstrates API integration, React state management, asynchronous HTTP requests, and component-based UI development.
+
+## Overview
+
+Atmos-Data lets users enter a city name and retrieve its current temperature. Weather information is displayed through a simple interface built with React and Bootstrap.
+
+## Features
+
+- **City-based search:** Enter a city name to request its weather data.
+- **Live API integration:** Fetch current weather information from OpenWeatherMap.
+- **Temperature conversion:** Convert temperatures from Kelvin to Celsius.
+- **Dynamic rendering:** Display the city name and temperature using React state.
+- **Responsive UI foundations:** Use Bootstrap's layout and styling utilities.
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React | Build the user interface |
+| JavaScript | Application logic |
+| Axios | Make HTTP requests |
+| Bootstrap 5 | UI styling and layout |
+| CSS | Custom visual styling |
+| OpenWeatherMap API | Retrieve weather data |
+| Create React App | Development and build tooling |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- An internet connection
+- An OpenWeatherMap API key
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/VajraX14/Atmos-Data.git
+cd Atmos-Data
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### API Configuration
+
+Obtain an API key from [OpenWeatherMap](https://openweathermap.org/api).
+
+The current implementation reads the API key from `src/App.js`, in the `apiKey` constant. Configure your own key there for local development.
+
+**Security note:** Do not commit API keys to a public repository. For a publicly deployed application, use a backend to protect the key and restrict its usage.
+
+### Run the Application
+
+Start the development server:
+
+```bash
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## How It Works
+
+1. The user enters a city name.
+2. React stores the input using `useState`.
+3. Clicking **Search** triggers an Axios request to the OpenWeatherMap current-weather endpoint.
+4. The application receives the API response and stores the weather data in React state.
+5. React renders the returned city name and temperature, converted from Kelvin to Celsius.
+
+## Project Structure
+
+```text
+Atmos-Data/
+├── public/
+│   └── index.html
+├── src/
+│   ├── App.js             # Weather search and API logic
+│   ├── App.css            # Weather interface styling
+│   ├── index.js           # Application entry point
+│   ├── index.css          # Global styling
+│   ├── reportWebVitals.js # Performance measurement helper
+│   └── setupTests.js      # Test configuration
+├── package.json           # Dependencies and scripts
+├── package-lock.json      # Locked npm dependency tree
+└── README.md
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Purpose |
+|---|---|
+| `npm start` | Start the development server |
+| `npm test` | Run the test suite |
+| `npm run build` | Create a production build |
+| `npm run eject` | Expose Create React App configuration (one-way operation) |
 
-### `npm start`
+## Current Limitations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Weather information is displayed only after a successful search.
+- API errors are logged to the console rather than displayed in the interface.
+- The current interface displays the city name and temperature, not a full forecast.
+- The project does not yet include automated tests for weather fetching or error handling.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Potential Improvements
 
-### `npm test`
+- Add loading indicators and user-friendly error messages.
+- Display weather conditions, humidity, wind speed, and weather icons.
+- Support searches using the Enter key.
+- Improve mobile layouts and accessibility.
+- Add automated tests for API requests and UI behavior.
+- Move API requests behind a backend before public deployment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Learning Objectives
 
-### `npm run build`
+This project provides practical experience with React hooks, controlled inputs, asynchronous API requests, HTTP response handling, conditional rendering, and CSS-based UI development.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+No license has currently been specified. Contact the repository owner before redistributing or reusing the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Repository:** [VajraX14/Atmos-Data](https://github.com/VajraX14/Atmos-Data)
